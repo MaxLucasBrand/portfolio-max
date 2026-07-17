@@ -39,22 +39,22 @@ export function AnimatedBackground() {
       aria-hidden="true"
       className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
     >
-      {/* Cor base */}
-      <div className="absolute inset-0 bg-[#071226]" />
+      {/* Base Ocean Night */}
+      <div className="absolute inset-0 bg-[#0B0F2B]" />
 
-      {/* Grade */}
-      <div className="portfolio-grid absolute inset-[-100px] opacity-60" />
+      {/* Única grade — animada e maior que a tela */}
+      <div className="portfolio-grid absolute -inset-[72px] opacity-40" />
 
-      {/* Luz azul */}
+      {/* Luz cyan */}
       <div className="portfolio-orb portfolio-orb-blue absolute -right-40 -top-40 h-[650px] w-[650px] rounded-full" />
 
       {/* Luz roxa */}
       <div className="portfolio-orb portfolio-orb-purple absolute -bottom-52 -left-40 h-[700px] w-[700px] rounded-full" />
 
-      {/* Luz rosa */}
+      {/* Luz peach */}
       <div className="portfolio-orb portfolio-orb-pink absolute bottom-[-260px] left-1/2 h-[650px] w-[750px] rounded-full" />
 
-      {/* Glow do mouse */}
+      {/* Glow que acompanha o mouse */}
       <div
         ref={glowRef}
         className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-cyan-400/[0.08] blur-[100px]"

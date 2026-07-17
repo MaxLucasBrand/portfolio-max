@@ -61,26 +61,34 @@
 }
 
 :root {
+  /*
+    Paleta principal:
+    Ocean Night  #0B0F2B
+    Vice Cyan    #00F0FF
+    Neon Purple  #BC6CFF
+    Miami Peach  #FFB86B
+  */
+
   --background: #0b0f2b;
-  --foreground: #f8f7ff;
+  --foreground: #f7f8ff;
 
   --card: #101532;
-  --card-foreground: #f8f7ff;
+  --card-foreground: #f7f8ff;
 
   --popover: #101532;
-  --popover-foreground: #f8f7ff;
+  --popover-foreground: #f7f8ff;
 
   --primary: #00f0ff;
   --primary-foreground: #07111f;
 
   --secondary: #171d42;
-  --secondary-foreground: #f8f7ff;
+  --secondary-foreground: #f7f8ff;
 
   --muted: #171d42;
   --muted-foreground: #a9abc4;
 
-  --accent: #ff5ca8;
-  --accent-foreground: #ffffff;
+  --accent: #ffb86b;
+  --accent-foreground: #21152c;
 
   --destructive: #ff4f78;
   --destructive-foreground: #ffffff;
@@ -90,26 +98,31 @@
   --ring: #00f0ff;
 
   --sidebar: #0d1230;
-  --sidebar-foreground: #f8f7ff;
+  --sidebar-foreground: #f7f8ff;
   --sidebar-primary: #00f0ff;
   --sidebar-primary-foreground: #07111f;
   --sidebar-accent: #171d42;
-  --sidebar-accent-foreground: #f8f7ff;
+  --sidebar-accent-foreground: #f7f8ff;
   --sidebar-border: rgba(0, 240, 255, 0.12);
   --sidebar-ring: #00f0ff;
 
   --chart-1: #00f0ff;
-  --chart-2: #ff5ca8;
-  --chart-3: #bc60ff;
-  --chart-4: #ffb86b;
-  --chart-5: #4ee7c5;
+  --chart-2: #bc6cff;
+  --chart-3: #ffb86b;
+  --chart-4: #4ee7c5;
+  --chart-5: #8594ff;
 
-  --vice-pink: #ff5ca8;
   --vice-cyan: #00f0ff;
-  --vice-purple: #bc60ff;
+  --vice-purple: #bc6cff;
   --vice-peach: #ffb86b;
   --vice-night: #0b0f2b;
   --vice-card: #101532;
+
+  /*
+    Alias mantido para não quebrar componentes antigos que ainda usam
+    "pink". Visualmente, agora ele utiliza Miami Peach.
+  */
+  --vice-pink: var(--vice-peach);
 
   --radius: 0.85rem;
 }
@@ -120,24 +133,46 @@
 
 html {
   scroll-behavior: smooth;
-  background: var(--background);
+  background: var(--vice-night);
 }
 
 body {
   min-height: 100vh;
   overflow-x: hidden;
   color: var(--foreground);
-  background: var(--background);
+  background-color: var(--vice-night);
+  background-image:
+    radial-gradient(
+      circle at 12% 8%,
+      rgba(0, 240, 255, 0.045),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 88% 18%,
+      rgba(188, 108, 255, 0.055),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(255, 184, 107, 0.035),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      #0b0f2b 0%,
+      #090d25 100%
+    );
+  background-attachment: fixed;
 }
 
 /*
-  O fundo visual e as animações ficam no componente AnimatedBackground.
-  Evitamos pseudo-elementos estáticos no body para não cobrir a animação.
+  O fundo visual e as animações continuam no componente AnimatedBackground.
+  Este background define apenas a base Ocean Night e não cobre os efeitos.
 */
 
 ::selection {
   color: #ffffff;
-  background: rgba(255, 92, 168, 0.55);
+  background: rgba(188, 108, 255, 0.46);
 }
 
 .section-label {
@@ -145,7 +180,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(0, 240, 255, 0.68);
+  color: rgba(0, 240, 255, 0.72);
 }
 
 .gradient-text,
@@ -155,8 +190,8 @@ body {
     linear-gradient(
       90deg,
       var(--vice-cyan) 0%,
-      var(--vice-purple) 48%,
-      var(--vice-pink) 100%
+      var(--vice-purple) 52%,
+      var(--vice-peach) 100%
     );
   background-clip: text;
   -webkit-background-clip: text;
@@ -166,20 +201,15 @@ body {
 .vice-purple-text {
   color: var(--vice-purple);
   text-shadow:
-    0 0 22px rgba(188, 96, 255, 0.26);
+    0 0 22px rgba(188, 108, 255, 0.26);
 }
 
 .orange-text,
-.vice-peach-text {
+.vice-peach-text,
+.vice-pink-text {
   color: var(--vice-peach);
   text-shadow:
-    0 0 22px rgba(255, 184, 107, 0.22);
-}
-
-.vice-pink-text {
-  color: var(--vice-pink);
-  text-shadow:
-    0 0 22px rgba(255, 92, 168, 0.28);
+    0 0 22px rgba(255, 184, 107, 0.24);
 }
 
 .vice-cyan-text {
@@ -211,11 +241,11 @@ body {
   background:
     linear-gradient(
       145deg,
-      rgba(16, 21, 50, 0.88),
-      rgba(11, 15, 43, 0.72)
+      rgba(16, 21, 50, 0.9),
+      rgba(11, 15, 43, 0.76)
     );
   box-shadow:
-    0 22px 70px rgba(0, 0, 0, 0.28),
+    0 22px 70px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -231,7 +261,7 @@ body {
   pointer-events: none;
   content: "";
   border-radius: 9999px;
-  background: rgba(188, 96, 255, 0.13);
+  background: rgba(188, 108, 255, 0.13);
   filter: blur(65px);
 }
 
@@ -245,7 +275,7 @@ body {
   pointer-events: none;
   content: "";
   border-radius: 9999px;
-  background: rgba(255, 92, 168, 0.08);
+  background: rgba(255, 184, 107, 0.075);
   filter: blur(75px);
 }
 
@@ -255,7 +285,8 @@ body {
   box-shadow:
     0 24px 80px rgba(0, 0, 0, 0.34),
     0 0 45px rgba(0, 240, 255, 0.06),
-    0 0 50px rgba(255, 92, 168, 0.04),
+    0 0 48px rgba(188, 108, 255, 0.045),
+    0 0 40px rgba(255, 184, 107, 0.035),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
@@ -275,8 +306,8 @@ body {
     linear-gradient(
       135deg,
       rgba(0, 240, 255, 0.4),
-      rgba(188, 96, 255, 0.13),
-      rgba(255, 92, 168, 0.35)
+      rgba(188, 108, 255, 0.22),
+      rgba(255, 184, 107, 0.32)
     );
   opacity: 0.45;
   filter: blur(1px);
@@ -288,9 +319,9 @@ body {
     linear-gradient(
       90deg,
       transparent,
-      rgba(0, 240, 255, 0.65),
-      rgba(188, 96, 255, 0.55),
-      rgba(255, 92, 168, 0.65),
+      rgba(0, 240, 255, 0.68),
+      rgba(188, 108, 255, 0.58),
+      rgba(255, 184, 107, 0.56),
       transparent
     );
 }
@@ -300,14 +331,15 @@ body {
     0 0 24px rgba(0, 240, 255, 0.12);
 }
 
-.vice-glow-pink {
-  box-shadow:
-    0 0 24px rgba(255, 92, 168, 0.12);
-}
-
 .vice-glow-purple {
   box-shadow:
-    0 0 24px rgba(188, 96, 255, 0.12);
+    0 0 24px rgba(188, 108, 255, 0.12);
+}
+
+.vice-glow-peach,
+.vice-glow-pink {
+  box-shadow:
+    0 0 24px rgba(255, 184, 107, 0.12);
 }
 
 .header-nav-link {
@@ -335,15 +367,17 @@ body {
   height: 2px;
   content: "";
   border-radius: 9999px;
-  background: linear-gradient(
-    90deg,
-    var(--vice-cyan),
-    var(--vice-purple),
-    var(--vice-pink)
-  );
+  background:
+    linear-gradient(
+      90deg,
+      var(--vice-cyan),
+      var(--vice-purple),
+      var(--vice-peach)
+    );
   box-shadow:
     0 0 10px rgba(0, 240, 255, 0.45),
-    0 0 14px rgba(255, 92, 168, 0.25);
+    0 0 14px rgba(188, 108, 255, 0.24),
+    0 0 12px rgba(255, 184, 107, 0.16);
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 250ms ease;
@@ -355,7 +389,7 @@ body {
   background: rgba(0, 240, 255, 0.035);
   box-shadow:
     0 0 22px rgba(0, 240, 255, 0.07),
-    inset 0 0 18px rgba(188, 96, 255, 0.025);
+    inset 0 0 18px rgba(188, 108, 255, 0.025);
   transform: translateY(-2px);
 }
 
@@ -365,11 +399,11 @@ body {
 
 .header-nav-link:focus-visible {
   color: var(--foreground);
-  border-color: rgba(255, 92, 168, 0.4);
+  border-color: rgba(188, 108, 255, 0.44);
   outline: none;
   box-shadow:
-    0 0 0 3px rgba(255, 92, 168, 0.1),
-    0 0 22px rgba(255, 92, 168, 0.08);
+    0 0 0 3px rgba(188, 108, 255, 0.11),
+    0 0 22px rgba(188, 108, 255, 0.09);
 }
 
 .header-nav-link:focus-visible::after {
@@ -378,12 +412,45 @@ body {
 
 @keyframes portfolio-grid-movement {
   from {
-    transform: translate3d(0, 0, 0);
+    background-position: 0 0;
   }
 
   to {
-    transform: translate3d(72px, 72px, 0);
+    background-position: 72px 72px;
   }
+}
+
+.portfolio-grid {
+  background-image:
+    linear-gradient(
+      rgba(0, 240, 255, 0.072) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 240, 255, 0.072) 1px,
+      transparent 1px
+    );
+
+  background-size: 72px 72px;
+  animation: portfolio-grid-movement 22s linear infinite;
+  will-change: background-position;
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
 }
 
 @keyframes portfolio-orb-blue {
@@ -421,25 +488,34 @@ body {
 
 .portfolio-grid {
   background-image:
-    linear-gradient(rgba(0, 240, 255, 0.075) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 240, 255, 0.075) 1px, transparent 1px);
+    linear-gradient(
+      rgba(0, 240, 255, 0.072) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 240, 255, 0.072) 1px,
+      transparent 1px
+    );
   background-size: 72px 72px;
   animation: portfolio-grid-movement 22s linear infinite;
   will-change: transform;
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
 }
 
 .portfolio-orb {
@@ -454,17 +530,24 @@ body {
 }
 
 .portfolio-orb-purple {
-  background: rgba(188, 96, 255, 0.18);
+  background: rgba(188, 108, 255, 0.18);
   animation: portfolio-orb-purple 16s ease-in-out infinite;
 }
 
+/*
+  Mantemos o nome antigo ".portfolio-orb-pink" para não quebrar o componente,
+  mas o brilho agora utiliza Miami Peach.
+*/
+.portfolio-orb-peach,
 .portfolio-orb-pink {
-  background: rgba(255, 92, 168, 0.14);
+  background: rgba(255, 184, 107, 0.115);
   animation: portfolio-orb-pink 15s ease-in-out infinite;
 }
 
-/* Mantém somente o scroll instantâneo quando o sistema reduz movimento.
-   As animações de fundo continuam ativas de forma lenta e discreta. */
+/*
+  Mantém somente o scroll instantâneo quando o sistema reduz movimento.
+  As animações de fundo continuam ativas de forma lenta e discreta.
+*/
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -476,6 +559,7 @@ body {
 
   .portfolio-orb-blue,
   .portfolio-orb-purple,
+  .portfolio-orb-peach,
   .portfolio-orb-pink {
     animation-duration: 30s;
   }

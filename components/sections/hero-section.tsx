@@ -35,7 +35,7 @@ export function HeroSection() {
   return (
     <section
       id="inicio"
-      className="vice-grid relative flex min-h-screen items-center overflow-hidden border-b border-cyan-400/10"
+      className="relative flex min-h-screen items-center overflow-hidden border-b border-cyan-400/10"
     >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-32 top-28 size-[420px] rounded-full bg-purple-500/[0.13] blur-[130px]" />
@@ -64,7 +64,7 @@ export function HeroSection() {
             <h1 className="max-w-4xl text-4xl font-black tracking-tight sm:text-6xl lg:text-7xl">
               Olá, sou{" "}
               <span className="vice-neon-text">
-                Max Lucas.
+                Max Brandão.
               </span>
             </h1>
 
@@ -96,7 +96,7 @@ export function HeroSection() {
               </a>
 
               <a
-                href="/curriculo-max-lucas.pdf"
+                href="/CV – Max Brandão Atualizado.pdf"
                 download
                 className={buttonVariants({
                   size: "lg",
@@ -113,7 +113,7 @@ export function HeroSection() {
 
             <div className="mt-8 flex items-center gap-3">
               <a
-                href="https://github.com/seu-usuario"
+                href="https://github.com/MaxLucasBrand"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Acessar GitHub"
