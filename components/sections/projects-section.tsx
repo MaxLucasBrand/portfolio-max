@@ -1,4 +1,4 @@
-import type { ElementType } from "react"
+import type { ElementType } from "react";
 
 import {
   ArrowUpRight,
@@ -11,30 +11,30 @@ import {
   Server,
   ShieldCheck,
   Sparkles,
-} from "lucide-react"
-import { FaGithub } from "react-icons/fa"
+} from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
-import { Badge } from "@/components/ui/badge"
-import { buttonVariants } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { cn } from "@/lib/utils"
+} from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 type Project = {
-  title: string
-  description: string
-  category: string
-  status: string
-  technologies: string[]
-  icon: ElementType
-  githubUrl?: string
-  projectUrl?: string
-}
+  title: string;
+  description: string;
+  category: string;
+  status: string;
+  technologies: string[];
+  icon: ElementType;
+  githubUrl?: string;
+  projectUrl?: string;
+};
 
 const featuredProject = {
   title: "Sistema Inteligente de Monitoramento",
@@ -42,15 +42,7 @@ const featuredProject = {
     "Plataforma corporativa para centralização, visualização e gerenciamento de câmeras de diferentes unidades em um único ambiente.",
   details:
     "A solução utiliza infraestrutura em nuvem, conexões VPN e processamento de vídeo para oferecer acesso controlado, monitoramento em tempo real e preparação para recursos de inteligência artificial.",
-  technologies: [
-    "AWS",
-    "Docker",
-    "Shinobi",
-    "FFmpeg",
-    "Linux",
-    "VPN",
-    "Nginx",
-  ],
+  technologies: ["AWS", "Docker", "Shinobi", "FFmpeg", "Linux", "VPN", "Nginx"],
   results: [
     {
       value: "70+",
@@ -73,7 +65,7 @@ const featuredProject = {
   ],
   projectUrl: "#",
   githubUrl: "#",
-}
+};
 
 const projects: Project[] = [
   {
@@ -87,7 +79,7 @@ const projects: Project[] = [
     githubUrl: "#",
     projectUrl: "#",
   },
-]
+];
 
 export function ProjectsSection() {
   return (
@@ -117,40 +109,16 @@ export function ProjectsSection() {
                 <span className="purple-text">ideias</span> em soluções{" "}
                 <span className="orange-text">reais.</span>
               </h2>
-
-              <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-                Soluções desenvolvidas para resolver desafios de
-                infraestrutura, automação, integração de sistemas,
-                monitoramento e inteligência artificial.
-              </p>
             </div>
 
             <div className="flex items-center gap-4">
-              <div className="hidden rounded-xl border border-white/10 bg-white/[0.02] px-5 py-3 sm:block">
-                <p className="text-2xl font-black text-primary">
-                  02
-                </p>
+              <div className="hidden rounded-xl border border-white/10 bg-white/[0.02] px-5 py-5 sm:block">
+                <p className="text-2xl font-black text-primary">02</p>
 
                 <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">
                   Projetos
                 </p>
               </div>
-
-              <a
-                href="https://github.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  buttonVariants({
-                    variant: "outline",
-                    size: "lg",
-                  }),
-                  "h-12 border-white/10 bg-white/[0.02] px-5 hover:border-primary/30 hover:bg-primary/5"
-                )}
-              >
-                <FaGithub className="size-4" />
-                Ver GitHub
-              </a>
             </div>
           </div>
 
@@ -202,38 +170,7 @@ export function ProjectsSection() {
                     ))}
                   </div>
 
-                  <div className="mt-8 flex flex-wrap gap-3">
-                    <a
-                      href={featuredProject.projectUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={cn(
-                        buttonVariants({
-                          size: "lg",
-                        }),
-                        "h-12 px-6 font-bold shadow-lg shadow-primary/15"
-                      )}
-                    >
-                      Ver projeto
-                      <ArrowUpRight className="size-4" />
-                    </a>
-
-                    <a
-                      href={featuredProject.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={cn(
-                        buttonVariants({
-                          variant: "outline",
-                          size: "lg",
-                        }),
-                        "h-12 border-white/10 bg-white/[0.02] px-6 hover:border-primary/30 hover:bg-primary/5"
-                      )}
-                    >
-                      <FaGithub className="size-4" />
-                      Código-fonte
-                    </a>
-                  </div>
+                  <div className="mt-8 flex flex-wrap gap-3"></div>
 
                   {/* Indicadores */}
                   <div className="mt-10 grid grid-cols-1 gap-3 border-t border-white/10 pt-8 sm:grid-cols-3">
@@ -312,25 +249,19 @@ export function ProjectsSection() {
                           <div className="rounded-xl border border-white/10 bg-white/[0.02] p-3">
                             <Network className="size-4 text-primary" />
 
-                            <p className="mt-2 text-xs font-bold">
-                              VPN
-                            </p>
+                            <p className="mt-2 text-xs font-bold">VPN</p>
                           </div>
 
                           <div className="rounded-xl border border-white/10 bg-white/[0.02] p-3">
                             <Server className="size-4 text-primary" />
 
-                            <p className="mt-2 text-xs font-bold">
-                              AWS
-                            </p>
+                            <p className="mt-2 text-xs font-bold">AWS</p>
                           </div>
 
                           <div className="rounded-xl border border-white/10 bg-white/[0.02] p-3">
                             <ShieldCheck className="size-4 text-primary" />
 
-                            <p className="mt-2 text-xs font-bold">
-                              Seguro
-                            </p>
+                            <p className="mt-2 text-xs font-bold">Seguro</p>
                           </div>
                         </div>
                       </div>
@@ -376,7 +307,7 @@ export function ProjectsSection() {
 
             <div className="max-w-xl">
               {projects.map((project) => {
-                const Icon = project.icon
+                const Icon = project.icon;
 
                 return (
                   <Card
@@ -423,50 +354,15 @@ export function ProjectsSection() {
                         ))}
                       </div>
 
-                      <div className="mt-6 flex flex-wrap gap-3 border-t border-white/10 pt-5">
-                        {project.projectUrl && (
-                          <a
-                            href={project.projectUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={cn(
-                              buttonVariants({
-                                size: "sm",
-                              }),
-                              "font-bold"
-                            )}
-                          >
-                            Visualizar
-                            <ExternalLink className="size-3.5" />
-                          </a>
-                        )}
-
-                        {project.githubUrl && (
-                          <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={cn(
-                              buttonVariants({
-                                variant: "outline",
-                                size: "sm",
-                              }),
-                              "border-white/10 bg-white/[0.02] hover:border-primary/30 hover:bg-primary/5"
-                            )}
-                          >
-                            <FaGithub className="size-3.5" />
-                            GitHub
-                          </a>
-                        )}
-                      </div>
+                      <div className="mt-6 flex flex-wrap gap-3 border-t border-white/10 pt-5"></div>
                     </CardContent>
                   </Card>
-                )
+                );
               })}
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

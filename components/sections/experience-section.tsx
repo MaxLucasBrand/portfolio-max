@@ -5,10 +5,10 @@ import {
   CheckCircle2,
   MonitorCog,
   ServerCog,
-} from "lucide-react"
+} from "lucide-react";
 
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 
 const responsibilities = [
   "Atendimento e suporte técnico presencial e remoto aos colaboradores",
@@ -20,7 +20,7 @@ const responsibilities = [
   "Administração e estruturação do Jira Service Management",
   "Implantação e administração de ambientes Linux utilizando Docker",
   "Criação de documentação técnica e padronização de processos",
-]
+];
 
 const projects = [
   {
@@ -37,7 +37,7 @@ const projects = [
     category: "Monitoramento",
     icon: ServerCog,
   },
-]
+];
 
 const technologies = [
   "AWS",
@@ -58,7 +58,7 @@ const technologies = [
   "REST API",
   "Shinobi",
   "MeshCentral",
-]
+];
 
 export function ExperienceSection() {
   return (
@@ -83,13 +83,6 @@ export function ExperienceSection() {
               <span className="purple-text">soluções</span> para problemas{" "}
               <span className="orange-text">reais.</span>
             </h2>
-
-            <p className="mt-5 text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-              Ao longo da minha atuação na TVLAR Motors, participei da
-              implantação de soluções de infraestrutura, desenvolvimento
-              interno, monitoramento corporativo e automação de processos que
-              contribuíram para aumentar a eficiência operacional da empresa.
-            </p>
           </div>
 
           {/* Linha da experiência */}
@@ -200,7 +193,7 @@ export function ExperienceSection() {
 
                     <div className="grid gap-4 md:grid-cols-2">
                       {projects.map((project, index) => {
-                        const Icon = project.icon
+                        const Icon = project.icon;
 
                         return (
                           <article
@@ -236,7 +229,7 @@ export function ExperienceSection() {
                               Projeto corporativo
                             </p>
                           </article>
-                        )
+                        );
                       })}
                     </div>
                   </div>
@@ -270,5 +263,5 @@ export function ExperienceSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

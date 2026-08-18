@@ -1,13 +1,9 @@
-import { Terminal } from "lucide-react"
+import { Terminal } from "lucide-react";
 
 const navigation = [
   {
     label: "Início",
     href: "#inicio",
-  },
-  {
-    label: "Sobre",
-    href: "#sobre",
   },
   {
     label: "Projetos",
@@ -21,7 +17,7 @@ const navigation = [
     label: "Contato",
     href: "#contato",
   },
-]
+];
 
 export function Header() {
   return (
@@ -58,5 +54,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }

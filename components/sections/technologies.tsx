@@ -1,4 +1,4 @@
-import type { ElementType } from "react"
+import type { ElementType } from "react";
 
 import {
   Cloud,
@@ -9,8 +9,8 @@ import {
   Server,
   ShieldCheck,
   Workflow,
-} from "lucide-react"
-import { FaAws } from "react-icons/fa"
+} from "lucide-react";
+import { FaAws } from "react-icons/fa";
 import {
   SiDocker,
   SiLinux,
@@ -19,32 +19,32 @@ import {
   SiPostgresql,
   SiReact,
   SiTypescript,
-} from "react-icons/si"
+} from "react-icons/si";
 
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 
 type MainTechnology = {
-  name: string
-  icon: ElementType
-  iconClassName: string
-  hoverClassName: string
-  glowClassName: string
-}
+  name: string;
+  icon: ElementType;
+  iconClassName: string;
+  hoverClassName: string;
+  glowClassName: string;
+};
 
 type TechnologyGroup = {
-  title: string
-  description: string
-  icon: ElementType
-  technologies: string[]
-  featured?: boolean
-}
+  title: string;
+  description: string;
+  icon: ElementType;
+  technologies: string[];
+  featured?: boolean;
+};
 
 const mainTechnologies: MainTechnology[] = [
   {
@@ -52,66 +52,58 @@ const mainTechnologies: MainTechnology[] = [
     icon: SiTypescript,
     iconClassName: "text-cyan-300",
     hoverClassName: "hover:border-cyan-400/40",
-    glowClassName:
-      "group-hover:drop-shadow-[0_0_12px_rgba(0,240,255,0.8)]",
+    glowClassName: "group-hover:drop-shadow-[0_0_12px_rgba(0,240,255,0.8)]",
   },
   {
     name: "Node.js",
     icon: SiNodedotjs,
     iconClassName: "text-pink-300",
     hoverClassName: "hover:border-pink-400/40",
-    glowClassName:
-      "group-hover:drop-shadow-[0_0_12px_rgba(255,92,168,0.8)]",
+    glowClassName: "group-hover:drop-shadow-[0_0_12px_rgba(255,92,168,0.8)]",
   },
   {
     name: "Next.js",
     icon: SiNextdotjs,
     iconClassName: "text-purple-300",
     hoverClassName: "hover:border-purple-400/40",
-    glowClassName:
-      "group-hover:drop-shadow-[0_0_12px_rgba(188,96,255,0.8)]",
+    glowClassName: "group-hover:drop-shadow-[0_0_12px_rgba(188,96,255,0.8)]",
   },
   {
     name: "React",
     icon: SiReact,
     iconClassName: "text-cyan-300",
     hoverClassName: "hover:border-cyan-400/40",
-    glowClassName:
-      "group-hover:drop-shadow-[0_0_12px_rgba(0,240,255,0.8)]",
+    glowClassName: "group-hover:drop-shadow-[0_0_12px_rgba(0,240,255,0.8)]",
   },
   {
     name: "PostgreSQL",
     icon: SiPostgresql,
     iconClassName: "text-purple-300",
     hoverClassName: "hover:border-purple-400/40",
-    glowClassName:
-      "group-hover:drop-shadow-[0_0_12px_rgba(188,96,255,0.8)]",
+    glowClassName: "group-hover:drop-shadow-[0_0_12px_rgba(188,96,255,0.8)]",
   },
   {
     name: "Docker",
     icon: SiDocker,
     iconClassName: "text-cyan-300",
     hoverClassName: "hover:border-cyan-400/40",
-    glowClassName:
-      "group-hover:drop-shadow-[0_0_12px_rgba(0,240,255,0.8)]",
+    glowClassName: "group-hover:drop-shadow-[0_0_12px_rgba(0,240,255,0.8)]",
   },
   {
     name: "AWS",
     icon: FaAws,
     iconClassName: "text-orange-300",
     hoverClassName: "hover:border-orange-400/40",
-    glowClassName:
-      "group-hover:drop-shadow-[0_0_12px_rgba(255,184,107,0.8)]",
+    glowClassName: "group-hover:drop-shadow-[0_0_12px_rgba(255,184,107,0.8)]",
   },
   {
     name: "Linux",
     icon: SiLinux,
     iconClassName: "text-pink-300",
     hoverClassName: "hover:border-pink-400/40",
-    glowClassName:
-      "group-hover:drop-shadow-[0_0_12px_rgba(255,92,168,0.8)]",
+    glowClassName: "group-hover:drop-shadow-[0_0_12px_rgba(255,92,168,0.8)]",
   },
-]
+];
 
 const technologyGroups: TechnologyGroup[] = [
   {
@@ -136,13 +128,7 @@ const technologyGroups: TechnologyGroup[] = [
     description:
       "Desenvolvimento de APIs, integrações entre sistemas, validação de dados e regras de negócio.",
     icon: Server,
-    technologies: [
-      "Node.js",
-      "TypeScript",
-      "Express",
-      "REST API",
-      "Python",
-    ],
+    technologies: ["Node.js", "TypeScript", "Express", "REST API", "Python"],
     featured: true,
   },
   {
@@ -180,13 +166,7 @@ const technologyGroups: TechnologyGroup[] = [
     description:
       "Padronização de ambientes, deploy de aplicações e gerenciamento de serviços em containers.",
     icon: Container,
-    technologies: [
-      "Docker",
-      "Docker Compose",
-      "Git",
-      "GitHub",
-      "Shell Script",
-    ],
+    technologies: ["Docker", "Docker Compose", "Git", "GitHub", "Shell Script"],
   },
   {
     title: "Redes e Monitoramento",
@@ -230,7 +210,7 @@ const technologyGroups: TechnologyGroup[] = [
       "SSH",
     ],
   },
-]
+];
 
 export function TechnologiesSection() {
   return (
@@ -253,12 +233,6 @@ export function TechnologiesSection() {
               Ferramentas que fazem parte do meu{" "}
               <span className="gradient-text">ecossistema.</span>
             </h2>
-
-            <p className="mt-5 text-base leading-8 text-muted-foreground sm:text-lg">
-              Minha experiência combina desenvolvimento de software,
-              infraestrutura, cloud e automação para construir soluções
-              completas, integradas e preparadas para ambientes reais.
-            </p>
           </div>
 
           <Card className="glow-card relative mb-8 overflow-hidden rounded-2xl border-cyan-400/20">
@@ -289,7 +263,7 @@ export function TechnologiesSection() {
 
                 <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
                   {mainTechnologies.map((technology) => {
-                    const Icon = technology.icon
+                    const Icon = technology.icon;
 
                     return (
                       <div
@@ -306,7 +280,7 @@ export function TechnologiesSection() {
                           {technology.name}
                         </span>
                       </div>
-                    )
+                    );
                   })}
                 </div>
               </div>
@@ -315,7 +289,7 @@ export function TechnologiesSection() {
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {technologyGroups.map((group) => {
-              const Icon = group.icon
+              const Icon = group.icon;
 
               return (
                 <Card
@@ -364,11 +338,11 @@ export function TechnologiesSection() {
                     </div>
                   </CardContent>
                 </Card>
-              )
+              );
             })}
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
